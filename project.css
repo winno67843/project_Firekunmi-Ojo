@@ -1,12 +1,13 @@
 #container
 {
-	margin: 0 auto;
-	width: 900px;
-	background: #fff;
-	font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
-	box-shadow: 0 10px 10px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-	min-height: calc(90vh);
-}	
+    margin: 0 auto;
+    width: 900px;
+    background: #fff;
+    font-family: "Lucida Grande", "Bitstream Vera Sans", "Verdana";
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    min-height: calc(90vh);
+}
+
 * {
     box-sizing: border-box;
 }
@@ -22,6 +23,7 @@ body {
     padding: 30px;
     text-align: center;
     background: white;
+
 }
 
 .header h1 {
@@ -32,6 +34,10 @@ body {
 .topnav {
     overflow: hidden;
     background-color: #333;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 /* Style the topnav links */
@@ -46,6 +52,12 @@ body {
 
 /* Change color on hover */
 .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Change color on active */
+.topnav a.active {
     background-color: #ddd;
     color: black;
 }
@@ -79,6 +91,17 @@ body {
     margin-top: 20px;
 }
 
+/* Gallery styles */
+.w3-half img {
+    margin-bottom:-6px;
+    margin-top:16px;
+    opacity:0.8;
+    cursor:pointer;
+}
+.w3-half img:hover {
+    opacity:1
+}
+
 /* Clear floats after the columns */
 .row:after {
     content: "";
@@ -96,6 +119,9 @@ body {
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 800px) {
+    #container {
+        width: 100%;
+    }
     .leftcolumn, .rightcolumn {   
         width: 100%;
         padding: 0;
@@ -104,6 +130,9 @@ body {
 
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
 @media screen and (max-width: 400px) {
+    #container {
+        width: 100%;
+    }
     .topnav a {
         float: none;
         width: 100%;
